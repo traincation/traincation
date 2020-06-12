@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/SearchPage.dart';
 
+import 'SearchPage.dart';
 import 'StationsList.dart';
 import 'StationsMap.dart';
 import 'ApiClient.dart' as apiClient;
