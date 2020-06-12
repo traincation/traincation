@@ -7,8 +7,13 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="traincation"
+        android:label="Traincation"
         android:icon="@mipmap/ic_launcher">
+        
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDIT6y0Za2j0P5aFmOp0Raa1LITCS-8coY"/>
+        
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
