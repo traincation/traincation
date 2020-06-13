@@ -68,6 +68,7 @@ class StationsMap extends StatelessWidget {
       initialCameraPosition: _switzerlandCenter,
       markers: _markers.values.toSet(),
       polylines: _polylines.values.toSet(),
+      myLocationEnabled: false,
     );
   }
 }
