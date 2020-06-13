@@ -102,7 +102,7 @@ class _MyHomeState extends State<MyHome> {
           BottomNavigationBarItem(
               icon: Icon(Icons.list), title: Text("Journey")),
           BottomNavigationBarItem(
-              icon: Icon(Icons.directions_transit), title: Text("Map")),
+              icon: Icon(Icons.map), title: Text("Map")),
         ],
         selectedItemColor: Colors.green[700],
       ),
