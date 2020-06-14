@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 
 import 'ApiClient.dart' as apiClient;
+import 'Constants.dart';
 
 class SearchPage extends StatefulWidget {
   @override
@@ -15,6 +16,7 @@ class _SearchPageState extends State<SearchPage> {
       child: Scaffold(
         appBar: AppBar(
           title: Text('Find a train station'),
+          backgroundColor: mainColor,
         ),
         body: SearchField(),
       ),

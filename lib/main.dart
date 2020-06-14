@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'Constants.dart';
 import 'SearchPage.dart';
 import 'StationsList.dart';
 import 'StationsMap.dart';
@@ -86,7 +87,7 @@ class _MyHomeState extends State<MyHome> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Switzerland by train'),
-        backgroundColor: Colors.green[700],
+        backgroundColor: mainColor,
         actions: [
           IconButton(
             icon: Icon(Icons.add_circle_outline),
