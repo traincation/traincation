@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:traincation/PromptToAdd.dart';
 
 import 'Constants.dart';
 import 'SearchPage.dart';
@@ -45,7 +46,9 @@ class _MyHomeState extends State<MyHome> {
 
   void _removeStation(String stationId) async {
     if (stations.contains(stationId)) {
-      stations.remove(stationId);
+      setState(() {
+        stations.remove(stationId);
+      });
       _loadData();
     }
   }
@@ -65,14 +68,20 @@ class _MyHomeState extends State<MyHome> {
   Widget _getPage() {
     switch (_selectedTabIndex) {
       case 0:
-        return StationsList(solverResult: _solverResult, removeStationCallback: _removeStation);
+        final remaining = 3 - stations.length;
+        if(remaining <= 0) {
+          return StationsList(solverResult: _solverResult, removeStationCallback: _removeStation);
+        } else {
+          return PromptToAdd(remainingStations: remaining, addStation: _pushSearch,);
+        }
+        break;
       case 1:
         return StationsMap(solverResult: _solverResult);
     }
     return null;
   }
 
-  void _pushSearch(context) async {
+  void _pushSearch() async {
     final newStationId = await Navigator.of(context).push<String>(
       MaterialPageRoute(builder: (context) => SearchPage()),
     );
@@ -91,7 +100,7 @@ class _MyHomeState extends State<MyHome> {
         actions: [
           IconButton(
             icon: Icon(Icons.add_circle_outline),
-            onPressed: () => _pushSearch(context),
+            onPressed: () => _pushSearch(),
           ),
         ],
       ),
