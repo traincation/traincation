@@ -4,12 +4,7 @@ import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'ApiClient.dart' as apiClient;
 import 'Constants.dart';
 
-class SearchPage extends StatefulWidget {
-  @override
-  _SearchPageState createState() => _SearchPageState();
-}
-
-class _SearchPageState extends State<SearchPage> {
+class SearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
