@@ -28,8 +28,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "Journey" : MessageLookupByLibrary.simpleMessage("Anreise"),
     "Just one one to go!" : MessageLookupByLibrary.simpleMessage("Nur noch einer!"),
     "Map" : MessageLookupByLibrary.simpleMessage("Karte"),
+    "Not station found" : MessageLookupByLibrary.simpleMessage("Keine Station gefunden"),
     "Start by adding the station from where you will leave." : MessageLookupByLibrary.simpleMessage("Beginnen Sie mit dem Hinzufügen der Station, von der aus Sie losfahren werden."),
-    "Travel in Switzerland by train" : MessageLookupByLibrary.simpleMessage("Reisen in der Schweiz mit dem Zug"),
+    "Travel in Switzerland by train" : MessageLookupByLibrary.simpleMessage("Der Schweiz mit dem Zug"),
     "You need to add stations" : MessageLookupByLibrary.simpleMessage("Sie müssen Stationen hinzufügen")
   };
 }

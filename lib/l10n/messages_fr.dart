@@ -22,14 +22,15 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "Add 2 more stations." : MessageLookupByLibrary.simpleMessage("Ajoutez encore 2 gares."),
-    "Add a station" : MessageLookupByLibrary.simpleMessage("Ajouter un arrêt"),
-    "Find a train station" : MessageLookupByLibrary.simpleMessage("Trouver un arrêt"),
+    "Add a station" : MessageLookupByLibrary.simpleMessage("Ajouter une gare"),
+    "Find a train station" : MessageLookupByLibrary.simpleMessage("Trouver une gare"),
     "For the computation to work, you need to add at least three stations." : MessageLookupByLibrary.simpleMessage("Pour que le calcul fonctionne, vous devez ajouter au moins 3 gares."),
     "Journey" : MessageLookupByLibrary.simpleMessage("Trajet"),
     "Just one one to go!" : MessageLookupByLibrary.simpleMessage("Plus qu\'une!"),
     "Map" : MessageLookupByLibrary.simpleMessage("Carte"),
+    "Not station found" : MessageLookupByLibrary.simpleMessage("Aucune gare trouvée"),
     "Start by adding the station from where you will leave." : MessageLookupByLibrary.simpleMessage("Commencez par ajouter votre gare de départ."),
     "Travel in Switzerland by train" : MessageLookupByLibrary.simpleMessage("Voyage en Suisse en train"),
-    "You need to add stations" : MessageLookupByLibrary.simpleMessage("Vous devez ajouter des stops")
+    "You need to add stations" : MessageLookupByLibrary.simpleMessage("Ajouter des gares")
   };
 }

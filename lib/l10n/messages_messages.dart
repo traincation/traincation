@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Journey" : MessageLookupByLibrary.simpleMessage("Journey"),
     "Just one one to go!" : MessageLookupByLibrary.simpleMessage("Just one one to go!"),
     "Map" : MessageLookupByLibrary.simpleMessage("Map"),
+    "Not station found" : MessageLookupByLibrary.simpleMessage("Not station found"),
     "Start by adding the station from where you will leave." : MessageLookupByLibrary.simpleMessage("Start by adding the station from where you will leave."),
     "Travel in Switzerland by train" : MessageLookupByLibrary.simpleMessage("Travel in Switzerland by train"),
     "You need to add stations" : MessageLookupByLibrary.simpleMessage("You need to add stations")
