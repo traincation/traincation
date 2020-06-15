@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'ApiClient.dart' as apiClient;
 import 'Constants.dart';
@@ -37,13 +38,20 @@ class MainPage extends StatefulWidget {
   _MainPageState createState() => _MainPageState();
 }
 
+final _stationsKey = "stations";
+
 class _MainPageState extends State<MainPage> {
   var stations = List<String>();
 
   int _selectedTabIndex = 0;
   apiClient.SolverResponse _solverResult;
 
-  void _loadData() async {
+  void _init() async {
+    await _fetchStations();
+    await _runSolver();
+  }
+
+  Future<void> _runSolver() async {
     if (stations.length < 3) return;
     var result = await apiClient.solve(stations);
     setState(() {
@@ -51,28 +59,44 @@ class _MainPageState extends State<MainPage> {
     });
   }
 
-  void _addStation(String stationId) async {
-    if (!stations.contains(stationId)) {
-      setState(() {
-        stations.add(stationId);
-      });
-      _loadData();
+  Future<void> _addStation(String stationId) async {
+    if (stations.contains(stationId)) {
+      return;
     }
+
+    setState(() {
+      stations.add(stationId);
+    });
+    await _runSolver();
+    await _saveStations();
   }
 
-  void _removeStation(String stationId) async {
-    if (stations.contains(stationId)) {
-      setState(() {
-        stations.remove(stationId);
-      });
-      _loadData();
+  Future<void> _removeStation(String stationId) async {
+    if (!stations.contains(stationId)) {
+      return;
     }
+
+    setState(() {
+      stations.remove(stationId);
+    });
+    await _runSolver();
+    await _saveStations();
+  }
+
+  Future<void> _fetchStations() async {
+    final prefs = await SharedPreferences.getInstance();
+    stations = prefs.getStringList(_stationsKey) ?? List<String>();
+  }
+
+  Future<void> _saveStations() async {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setStringList(_stationsKey, stations);
   }
 
   @override
   void initState() {
     super.initState();
-    _loadData();
+    _init();
   }
 
   _changeIndex(int index) {
@@ -87,8 +111,11 @@ class _MainPageState extends State<MainPage> {
         final remaining = 3 - stations.length;
         if (remaining <= 0) {
           return StationsList(
-              solverResult: _solverResult,
-              removeStationCallback: _removeStation);
+            solverResult: _solverResult,
+            removeStationCallback: (stationId) async {
+              await _removeStation(stationId);
+            },
+          );
         } else {
           return PromptToAdd(
             remainingStations: remaining,
@@ -99,6 +126,7 @@ class _MainPageState extends State<MainPage> {
       case 1:
         return StationsMap(solverResult: _solverResult);
     }
+
     return null;
   }
 
@@ -108,7 +136,7 @@ class _MainPageState extends State<MainPage> {
     );
 
     if (newStationId != null) {
-      _addStation(newStationId);
+      await _addStation(newStationId);
     }
   }
 
