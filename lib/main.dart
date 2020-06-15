@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'ApiClient.dart' as apiClient;
 import 'Constants.dart';
+import 'MyLocalizations.dart';
+import 'PromptToAdd.dart';
 import 'SearchPage.dart';
 import 'StationsList.dart';
-import 'PromptToAdd.dart';
 import 'StationsMap.dart';
 
 void main() {
@@ -14,16 +16,28 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: MyHome());
+    return MaterialApp(
+      home: MainPage(),
+      localizationsDelegates: [
+        const MyLocalizationsDelegate(),
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('en', ''),
+        const Locale('fr', ''),
+        const Locale('de', ''),
+      ],
+    );
   }
 }
 
-class MyHome extends StatefulWidget {
+class MainPage extends StatefulWidget {
   @override
-  _MyHomeState createState() => _MyHomeState();
+  _MainPageState createState() => _MainPageState();
 }
 
-class _MyHomeState extends State<MyHome> {
+class _MainPageState extends State<MainPage> {
   var stations = List<String>();
 
   int _selectedTabIndex = 0;
@@ -102,7 +116,7 @@ class _MyHomeState extends State<MyHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Switzerland by train'),
+        title: Text(MyLocalizations.of(context).mainTitle),
         backgroundColor: mainColor,
         actions: [
           IconButton(
@@ -117,8 +131,11 @@ class _MyHomeState extends State<MyHome> {
         onTap: _changeIndex,
         items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.list), title: Text("Journey")),
-          BottomNavigationBarItem(icon: Icon(Icons.map), title: Text("Map")),
+              icon: Icon(Icons.list),
+              title: Text(MyLocalizations.of(context).tabJourney)),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.map),
+              title: Text(MyLocalizations.of(context).tabMap)),
         ],
         selectedItemColor: Colors.green[700],
       ),

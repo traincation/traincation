@@ -3,6 +3,7 @@ import 'package:flutter_typeahead/flutter_typeahead.dart';
 
 import 'ApiClient.dart' as apiClient;
 import 'Constants.dart';
+import 'MyLocalizations.dart';
 
 class SearchPage extends StatelessWidget {
   @override
@@ -10,7 +11,7 @@ class SearchPage extends StatelessWidget {
     return Material(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Find a train station'),
+          title: Text(MyLocalizations.of(context).searchTitle),
           backgroundColor: mainColor,
         ),
         body: SearchField(),
@@ -50,6 +51,11 @@ class SearchField extends StatelessWidget {
         return ListTile(
           leading: Icon(_iconFromType(station.type)),
           title: Text(station.name),
+        );
+      },
+      noItemsFoundBuilder: (context) {
+        return ListTile(
+          title: Text(MyLocalizations.of(context).searchNotFound),
         );
       },
       onSuggestionSelected: (apiClient.Station suggestion) {

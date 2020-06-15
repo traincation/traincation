@@ -1,0 +1,58 @@
+{
+    "@@last_modified": "2020-06-15T17:27:35+0000",
+    "Travel in Switzerland by train": "Der Schweiz mit dem Zug",
+    "@Travel in Switzerland by train": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "You need to add stations": "Sie müssen Stationen hinzufügen",
+    "@You need to add stations": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "For the computation to work, you need to add at least three stations.": "Damit die Berechnung funktioniert, müssen Sie mindestens drei Stationen hinzufügen.",
+    "@For the computation to work, you need to add at least three stations.": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "Start by adding the station from where you will leave.": "Beginnen Sie mit dem Hinzufügen der Station, von der aus Sie losfahren werden.",
+    "@Start by adding the station from where you will leave.": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "Add 2 more stations.": "Fügen Sie 2 weitere Stationen hinzu.",
+    "@Add 2 more stations.": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "Just one one to go!": "Nur noch einer!",
+    "@Just one one to go!": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "Add a station": "Station hinzufügen",
+    "@Add a station": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "Journey": "Anreise",
+    "@Journey": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "Map": "Karte",
+    "@Map": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "Find a train station": "Einen Bahnhof finden",
+    "@Find a train station": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "Not station found": "Keine Station gefunden",
+    "@Not station found": {
+        "type": "text",
+        "placeholders": {}
+    }
+}
