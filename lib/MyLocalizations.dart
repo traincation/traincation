@@ -90,6 +90,13 @@ class MyLocalizations {
       locale: localeName,
     );
   }
+
+  String get searchNotFound {
+    return Intl.message(
+      'Not station found',
+      locale: localeName,
+    );
+  }
 }
 
 class MyLocalizationsDelegate extends LocalizationsDelegate<MyLocalizations> {

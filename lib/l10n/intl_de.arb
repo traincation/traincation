@@ -1,6 +1,6 @@
 {
-    "@@last_modified": "2020-06-15T16:47:29+0000",
-    "Travel in Switzerland by train": "Reisen in der Schweiz mit dem Zug",
+    "@@last_modified": "2020-06-15T17:27:35+0000",
+    "Travel in Switzerland by train": "Der Schweiz mit dem Zug",
     "@Travel in Switzerland by train": {
         "type": "text",
         "placeholders": {}
@@ -47,6 +47,11 @@
     },
     "Find a train station": "Einen Bahnhof finden",
     "@Find a train station": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "Not station found": "Keine Station gefunden",
+    "@Not station found": {
         "type": "text",
         "placeholders": {}
     }

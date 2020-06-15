@@ -53,6 +53,11 @@ class SearchField extends StatelessWidget {
           title: Text(station.name),
         );
       },
+      noItemsFoundBuilder: (context) {
+        return ListTile(
+          title: Text(MyLocalizations.of(context).searchNotFound),
+        );
+      },
       onSuggestionSelected: (apiClient.Station suggestion) {
         Navigator.of(context).pop(suggestion.id);
       },

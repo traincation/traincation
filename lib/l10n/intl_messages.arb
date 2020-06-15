@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-06-15T18:44:29.246799",
+  "@@last_modified": "2020-06-15T19:26:22.999786",
   "Travel in Switzerland by train": "Travel in Switzerland by train",
   "@Travel in Switzerland by train": {
     "type": "text",
@@ -47,6 +47,11 @@
   },
   "Find a train station": "Find a train station",
   "@Find a train station": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Not station found": "Not station found",
+  "@Not station found": {
     "type": "text",
     "placeholders": {}
   }

@@ -1,11 +1,11 @@
 {
-    "@@last_modified": "2020-06-15T16:46:38+0000",
+    "@@last_modified": "2020-06-15T17:31:21+0000",
     "Travel in Switzerland by train": "Voyage en Suisse en train",
     "@Travel in Switzerland by train": {
         "type": "text",
         "placeholders": {}
     },
-    "You need to add stations": "Vous devez ajouter des stops",
+    "You need to add stations": "Ajouter des gares",
     "@You need to add stations": {
         "type": "text",
         "placeholders": {}
@@ -30,7 +30,7 @@
         "type": "text",
         "placeholders": {}
     },
-    "Add a station": "Ajouter un arrêt",
+    "Add a station": "Ajouter une gare",
     "@Add a station": {
         "type": "text",
         "placeholders": {}
@@ -45,8 +45,13 @@
         "type": "text",
         "placeholders": {}
     },
-    "Find a train station": "Trouver un arrêt",
+    "Find a train station": "Trouver une gare",
     "@Find a train station": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "Not station found": "Aucune gare trouvée",
+    "@Not station found": {
         "type": "text",
         "placeholders": {}
     }
