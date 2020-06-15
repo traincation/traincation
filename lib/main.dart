@@ -59,7 +59,7 @@ class _MainPageState extends State<MainPage> {
     });
   }
 
-  void _addStation(String stationId) async {
+  Future<void> _addStation(String stationId) async {
     if (stations.contains(stationId)) {
       return;
     }
@@ -71,7 +71,7 @@ class _MainPageState extends State<MainPage> {
     await _saveStations();
   }
 
-  void _removeStation(String stationId) async {
+  Future<void> _removeStation(String stationId) async {
     if (!stations.contains(stationId)) {
       return;
     }
@@ -111,8 +111,11 @@ class _MainPageState extends State<MainPage> {
         final remaining = 3 - stations.length;
         if (remaining <= 0) {
           return StationsList(
-              solverResult: _solverResult,
-              removeStationCallback: _removeStation);
+            solverResult: _solverResult,
+            removeStationCallback: (stationId) async {
+              await _removeStation(stationId);
+            },
+          );
         } else {
           return PromptToAdd(
             remainingStations: remaining,
@@ -123,6 +126,7 @@ class _MainPageState extends State<MainPage> {
       case 1:
         return StationsMap(solverResult: _solverResult);
     }
+
     return null;
   }
 
@@ -132,7 +136,7 @@ class _MainPageState extends State<MainPage> {
     );
 
     if (newStationId != null) {
-      _addStation(newStationId);
+      await _addStation(newStationId);
     }
   }
 
