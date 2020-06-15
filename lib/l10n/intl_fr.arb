@@ -1,0 +1,53 @@
+{
+    "@@last_modified": "2020-06-15T16:46:38+0000",
+    "Travel in Switzerland by train": "Voyage en Suisse en train",
+    "@Travel in Switzerland by train": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "You need to add stations": "Vous devez ajouter des stops",
+    "@You need to add stations": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "For the computation to work, you need to add at least three stations.": "Pour que le calcul fonctionne, vous devez ajouter au moins 3 gares.",
+    "@For the computation to work, you need to add at least three stations.": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "Start by adding the station from where you will leave.": "Commencez par ajouter votre gare de départ.",
+    "@Start by adding the station from where you will leave.": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "Add 2 more stations.": "Ajoutez encore 2 gares.",
+    "@Add 2 more stations.": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "Just one one to go!": "Plus qu'une!",
+    "@Just one one to go!": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "Add a station": "Ajouter un arrêt",
+    "@Add a station": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "Journey": "Trajet",
+    "@Journey": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "Map": "Carte",
+    "@Map": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "Find a train station": "Trouver un arrêt",
+    "@Find a train station": {
+        "type": "text",
+        "placeholders": {}
+    }
+}

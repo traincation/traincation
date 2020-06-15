@@ -1,0 +1,53 @@
+{
+  "@@last_modified": "2020-06-15T18:44:29.246799",
+  "Travel in Switzerland by train": "Travel in Switzerland by train",
+  "@Travel in Switzerland by train": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "You need to add stations": "You need to add stations",
+  "@You need to add stations": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "For the computation to work, you need to add at least three stations.": "For the computation to work, you need to add at least three stations.",
+  "@For the computation to work, you need to add at least three stations.": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Start by adding the station from where you will leave.": "Start by adding the station from where you will leave.",
+  "@Start by adding the station from where you will leave.": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Add 2 more stations.": "Add 2 more stations.",
+  "@Add 2 more stations.": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Just one one to go!": "Just one one to go!",
+  "@Just one one to go!": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Add a station": "Add a station",
+  "@Add a station": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Journey": "Journey",
+  "@Journey": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Map": "Map",
+  "@Map": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Find a train station": "Find a train station",
+  "@Find a train station": {
+    "type": "text",
+    "placeholders": {}
+  }
+}

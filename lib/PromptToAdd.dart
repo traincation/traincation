@@ -1,11 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:traincation/Constants.dart';
 
+import 'MyLocalizations.dart';
+
 class PromptToAdd extends StatelessWidget {
-  PromptToAdd({Key key, @required this.remainingStations, @required this.addStation}) : super(key: key);
+  PromptToAdd(
+      {Key key, @required this.remainingStations, @required this.addStation})
+      : super(key: key);
 
   final int remainingStations;
   final VoidCallback addStation;
+
+  String getButtonText(BuildContext context) {
+    switch (remainingStations) {
+      case 3:
+        return MyLocalizations.of(context).promptMissing3;
+      case 2:
+        return MyLocalizations.of(context).promptMissing2;
+      case 1:
+        return MyLocalizations.of(context).promptMissing1;
+    }
+    return "";
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,26 +33,25 @@ class PromptToAdd extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(8),
             child: Text(
-              "You need to add stations",
+              MyLocalizations.of(context).promptTitle,
               style: DefaultTextStyle.of(context).style.copyWith(fontSize: 30),
             ),
           ),
           Container(
             padding: const EdgeInsets.all(8),
-            child: Text(
-                "For the computation to work, you need to add at least three stations."),
+            child: Text(MyLocalizations.of(context).promptExplaination),
           ),
           Container(
             padding: const EdgeInsets.all(8),
             child: Text(
-              "Only $remainingStations remaining!",
+              getButtonText(context),
               style: DefaultTextStyle.of(context)
                   .style
                   .copyWith(fontWeight: FontWeight.bold),
             ),
           ),
           OutlineButton(
-            child: Text("Add a station"),
+            child: Text(MyLocalizations.of(context).promptAddButton),
             textColor: mainColor,
             onPressed: addStation,
           ),
