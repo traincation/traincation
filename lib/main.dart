@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:traincation/PromptToAdd.dart';
 
+import 'ApiClient.dart' as apiClient;
 import 'Constants.dart';
 import 'SearchPage.dart';
 import 'StationsList.dart';
+import 'PromptToAdd.dart';
 import 'StationsMap.dart';
-import 'ApiClient.dart' as apiClient;
 
 void main() {
   runApp(MyApp());
@@ -30,7 +30,7 @@ class _MyHomeState extends State<MyHome> {
   apiClient.SolverResponse _solverResult;
 
   void _loadData() async {
-    if(stations.length < 3) return;
+    if (stations.length < 3) return;
     var result = await apiClient.solve(stations);
     setState(() {
       _solverResult = result;
@@ -39,7 +39,9 @@ class _MyHomeState extends State<MyHome> {
 
   void _addStation(String stationId) async {
     if (!stations.contains(stationId)) {
-      stations.add(stationId);
+      setState(() {
+        stations.add(stationId);
+      });
       _loadData();
     }
   }
@@ -69,10 +71,15 @@ class _MyHomeState extends State<MyHome> {
     switch (_selectedTabIndex) {
       case 0:
         final remaining = 3 - stations.length;
-        if(remaining <= 0) {
-          return StationsList(solverResult: _solverResult, removeStationCallback: _removeStation);
+        if (remaining <= 0) {
+          return StationsList(
+              solverResult: _solverResult,
+              removeStationCallback: _removeStation);
         } else {
-          return PromptToAdd(remainingStations: remaining, addStation: _pushSearch,);
+          return PromptToAdd(
+            remainingStations: remaining,
+            addStation: _pushSearch,
+          );
         }
         break;
       case 1:
@@ -111,8 +118,7 @@ class _MyHomeState extends State<MyHome> {
         items: [
           BottomNavigationBarItem(
               icon: Icon(Icons.list), title: Text("Journey")),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.map), title: Text("Map")),
+          BottomNavigationBarItem(icon: Icon(Icons.map), title: Text("Map")),
         ],
         selectedItemColor: Colors.green[700],
       ),
