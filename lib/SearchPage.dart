@@ -8,14 +8,12 @@ import 'MyLocalizations.dart';
 class SearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(MyLocalizations.of(context).searchTitle),
-          backgroundColor: mainColor,
-        ),
-        body: SearchField(),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(MyLocalizations.of(context).searchTitle),
+        backgroundColor: mainColor,
       ),
+      body: SearchField(),
     );
   }
 }
