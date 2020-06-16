@@ -50,8 +50,9 @@ class PromptToAdd extends StatelessWidget {
                   .copyWith(fontWeight: FontWeight.bold),
             ),
           ),
-          OutlineButton(
-            child: Text(MyLocalizations.of(context).promptAddButton),
+          OutlineButton.icon(
+            icon: Icon(Icons.add_circle_outline),
+            label: Text(MyLocalizations.of(context).promptAddButton),
             textColor: mainColor,
             onPressed: addStation,
           ),
