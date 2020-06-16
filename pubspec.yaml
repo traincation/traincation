@@ -36,6 +36,7 @@ dependencies:
   json_serializable: ^3.3.0
   flutter_typeahead: ^1.8.1
   shared_preferences:
+  flutter_spinkit:
 
 dev_dependencies:
   flutter_test:

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'ApiClient.dart' as apiClient;
@@ -43,6 +44,7 @@ final _stationsKey = "stations";
 
 class _MainPageState extends State<MainPage> {
   var stations = List<String>();
+  var isLoading = false;
 
   int _selectedTabIndex = 0;
   apiClient.SolverResponse _solverResult;
@@ -54,8 +56,12 @@ class _MainPageState extends State<MainPage> {
 
   Future<void> _runSolver() async {
     if (stations.length < 3) return;
+    setState(() {
+      isLoading = true;
+    });
     var result = await apiClient.solve(stations);
     setState(() {
+      isLoading = false;
       _solverResult = result;
     });
   }
@@ -109,6 +115,11 @@ class _MainPageState extends State<MainPage> {
   }
 
   Widget _getPage() {
+    // Waiting for the loading to be done before showing anything
+    if (_solverResult == null && stations.length >= 3) {
+      return null;
+    }
+
     switch (_selectedTabIndex) {
       case 0:
         final remaining = 3 - stations.length;
@@ -149,12 +160,7 @@ class _MainPageState extends State<MainPage> {
       appBar: AppBar(
         title: Text(MyLocalizations.of(context).mainTitle),
         backgroundColor: mainColor,
-        actions: [
-          IconButton(
-            icon: Icon(Icons.add_circle_outline),
-            onPressed: () => _pushSearch(),
-          ),
-        ],
+        actions: getAppBarActions(),
       ),
       body: _getPage(),
       bottomNavigationBar: BottomNavigationBar(
@@ -171,5 +177,25 @@ class _MainPageState extends State<MainPage> {
         selectedItemColor: Colors.green[700],
       ),
     );
+  }
+
+  List<Widget> getAppBarActions() {
+    final actions = List<Widget>();
+
+    if (isLoading) {
+      actions.add(Container(
+          padding: const EdgeInsets.all(8.0),
+          child: SpinKitDoubleBounce(
+            color: Colors.white,
+            size: 30.0,
+          )));
+    } else {
+      actions.add(IconButton(
+        icon: Icon(Icons.add_circle_outline),
+        onPressed: () => _pushSearch(),
+      ));
+    }
+
+    return actions;
   }
 }
