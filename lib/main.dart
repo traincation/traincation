@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -46,7 +47,7 @@ class _MainPageState extends State<MainPage> {
   int _selectedTabIndex = 0;
   apiClient.SolverResponse _solverResult;
 
-  void _init() async {
+  Future<void> _init() async {
     await _fetchStations();
     await _runSolver();
   }
@@ -96,7 +97,9 @@ class _MainPageState extends State<MainPage> {
   @override
   void initState() {
     super.initState();
-    _init();
+    SchedulerBinding.instance.addPostFrameCallback((_) {
+      _init();
+    });
   }
 
   _changeIndex(int index) {
