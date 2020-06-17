@@ -25,6 +25,7 @@ class PromptToAdd extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     return Container(
       padding: const EdgeInsets.all(16),
       child: Column(
@@ -34,20 +35,21 @@ class PromptToAdd extends StatelessWidget {
             padding: const EdgeInsets.all(8),
             child: Text(
               MyLocalizations.of(context).promptTitle,
-              style: DefaultTextStyle.of(context).style.copyWith(fontSize: 30),
+              style: textTheme.headline4,
             ),
           ),
           Container(
             padding: const EdgeInsets.all(8),
-            child: Text(MyLocalizations.of(context).promptExplaination),
+            child: Text(
+              MyLocalizations.of(context).promptExplaination,
+              style: textTheme.bodyText2,
+            ),
           ),
           Container(
             padding: const EdgeInsets.all(8),
             child: Text(
               getButtonText(context),
-              style: DefaultTextStyle.of(context)
-                  .style
-                  .copyWith(fontWeight: FontWeight.bold),
+              style: textTheme.subtitle2,
             ),
           ),
           OutlineButton.icon(
