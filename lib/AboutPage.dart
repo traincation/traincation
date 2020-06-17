@@ -11,7 +11,7 @@ class AboutPage extends StatefulWidget {
 }
 
 class AboutPageState extends State {
-  var appName = "";
+  var appName = "Traincation";
   var version = "";
   var buildNumber = "";
 
@@ -24,7 +24,6 @@ class AboutPageState extends State {
   Future<void> fetchVersions() async {
     final packageInfo = await PackageInfo.fromPlatform();
     setState(() {
-      appName = packageInfo.appName;
       version = packageInfo.version;
       buildNumber = packageInfo.buildNumber;
     });
