@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-06-15T19:26:22.999786",
+  "@@last_modified": "2020-06-17T18:37:33.411132",
   "Travel in Switzerland by train": "Travel in Switzerland by train",
   "@Travel in Switzerland by train": {
     "type": "text",
@@ -45,6 +45,11 @@
     "type": "text",
     "placeholders": {}
   },
+  "More": "More",
+  "@More": {
+    "type": "text",
+    "placeholders": {}
+  },
   "Find a train station": "Find a train station",
   "@Find a train station": {
     "type": "text",
@@ -54,5 +59,35 @@
   "@Not station found": {
     "type": "text",
     "placeholders": {}
+  },
+  "aboutVersion": "Version {name} ({build})",
+  "@aboutVersion": {
+    "type": "text",
+    "placeholders": {
+      "name": {},
+      "build": {}
+    }
+  },
+  "Could not open your email app.": "Could not open your email app.",
+  "@Could not open your email app.": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Could not open your browser.": "Could not open your browser.",
+  "@Could not open your browser.": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Share it with your friends": "Share it with your friends",
+  "@Share it with your friends": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "aboutShareText": "Traincation, find the best way to spend your train holidays in Switzerland: {url}",
+  "@aboutShareText": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
   }
 }

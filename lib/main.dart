@@ -4,8 +4,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'AboutPage.dart';
 import 'ApiClient.dart' as apiClient;
-import 'Constants.dart';
 import 'MyLocalizations.dart';
 import 'PromptToAdd.dart';
 import 'SearchPage.dart';
@@ -31,6 +31,10 @@ class MyApp extends StatelessWidget {
         const Locale('fr', ''),
         const Locale('de', ''),
       ],
+      theme: ThemeData(
+        primaryColor: Colors.green[700],
+        accentColor: Colors.green,
+      ),
     );
   }
 }
@@ -139,6 +143,8 @@ class _MainPageState extends State<MainPage> {
         break;
       case 1:
         return StationsMap(solverResult: _solverResult);
+      case 2:
+        return AboutPage();
     }
 
     return null;
@@ -159,7 +165,6 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(MyLocalizations.of(context).mainTitle),
-        backgroundColor: mainColor,
         actions: getAppBarActions(),
       ),
       body: _getPage(),
@@ -173,8 +178,10 @@ class _MainPageState extends State<MainPage> {
           BottomNavigationBarItem(
               icon: Icon(Icons.map),
               title: Text(MyLocalizations.of(context).tabMap)),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.info_outline),
+              title: Text(MyLocalizations.of(context).tabMore)),
         ],
-        selectedItemColor: Colors.green[700],
       ),
     );
   }

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 
 import 'ApiClient.dart' as apiClient;
-import 'Constants.dart';
 import 'MyLocalizations.dart';
 
 class SearchPage extends StatelessWidget {
@@ -11,7 +10,6 @@ class SearchPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(MyLocalizations.of(context).searchTitle),
-        backgroundColor: mainColor,
       ),
       body: SearchField(),
     );
