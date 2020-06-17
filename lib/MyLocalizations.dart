@@ -84,6 +84,13 @@ class MyLocalizations {
     );
   }
 
+  String get tabMore {
+    return Intl.message(
+      'More',
+      locale: localeName,
+    );
+  }
+
   String get searchTitle {
     return Intl.message(
       'Find a train station',
@@ -97,6 +104,37 @@ class MyLocalizations {
       locale: localeName,
     );
   }
+
+  aboutVersion(String name, String build) =>
+      Intl.message('Version $name ($build)',
+          args: [name, build], name: 'aboutVersion', locale: localeName);
+
+  String get aboutEmailError {
+    return Intl.message(
+      'Could not open your email app.',
+      locale: localeName,
+    );
+  }
+
+  String get aboutBrowserError {
+    return Intl.message(
+      'Could not open your browser.',
+      locale: localeName,
+    );
+  }
+
+  String get aboutShareButton {
+    return Intl.message(
+      'Share it with your friends',
+      locale: localeName,
+    );
+  }
+
+  aboutShareText(String url) => Intl.message(
+      'Traincation, find the best way to spend your train holidays in Switzerland: $url',
+      args: [url],
+      name: 'aboutShareText',
+      locale: localeName);
 }
 
 class MyLocalizationsDelegate extends LocalizationsDelegate<MyLocalizations> {

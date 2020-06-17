@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:traincation/Constants.dart';
 
 import 'MyLocalizations.dart';
 
@@ -55,7 +54,7 @@ class PromptToAdd extends StatelessWidget {
           OutlineButton.icon(
             icon: Icon(Icons.add_circle_outline),
             label: Text(MyLocalizations.of(context).promptAddButton),
-            textColor: mainColor,
+            textColor: Theme.of(context).primaryColor,
             onPressed: addStation,
           ),
           Spacer(),

@@ -37,6 +37,9 @@ dependencies:
   flutter_typeahead: ^1.8.1
   shared_preferences:
   flutter_spinkit:
+  package_info:
+  url_launcher:
+  share:
 
 dev_dependencies:
   flutter_test:

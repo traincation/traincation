@@ -1,5 +1,5 @@
 {
-    "@@last_modified": "2020-06-15T17:27:35+0000",
+    "@@last_modified": "2020-06-17T16:40:30+0000",
     "Travel in Switzerland by train": "Der Schweiz mit dem Zug",
     "@Travel in Switzerland by train": {
         "type": "text",
@@ -54,5 +54,40 @@
     "@Not station found": {
         "type": "text",
         "placeholders": {}
+    },
+    "More": "Mehr",
+    "@More": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "aboutVersion": "Version {name} ({build})",
+    "@aboutVersion": {
+        "type": "text",
+        "placeholders": {
+            "name": {},
+            "build": {}
+        }
+    },
+    "Could not open your email app.": "Konnte Ihre E-Mail-Anwendung nicht öffnen.",
+    "@Could not open your email app.": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "Could not open your browser.": "Konnte Ihren Browser nicht öffnen.",
+    "@Could not open your browser.": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "Share it with your friends": "Teilen Sie es mit Ihren Freunden",
+    "@Share it with your friends": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "aboutShareText": "Traincation, finden Sie den besten Weg, Ihre Zugferien in der Schweiz zu verbringen: {url}",
+    "@aboutShareText": {
+        "type": "text",
+        "placeholders": {
+            "url": {}
+        }
     }
 }
