@@ -38,7 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Not station found" : MessageLookupByLibrary.simpleMessage("Keine Station gefunden"),
     "Share it with your friends" : MessageLookupByLibrary.simpleMessage("Teilen Sie es mit Ihren Freunden"),
     "Start by adding the station from where you will leave." : MessageLookupByLibrary.simpleMessage("Beginnen Sie mit dem Hinzufügen der Station, von der Sie losfahren möchten."),
-    "Travel in Switzerland by train" : MessageLookupByLibrary.simpleMessage("Reisen in der Schweiz mit dem Zug"),
+    "Travel in Switzerland by train" : MessageLookupByLibrary.simpleMessage("Reisen in der Schweiz"),
     "You need to add stations" : MessageLookupByLibrary.simpleMessage("Bitte fügen Sie Stationen hinzu"),
     "aboutShareText" : m0,
     "aboutVersion" : m1
