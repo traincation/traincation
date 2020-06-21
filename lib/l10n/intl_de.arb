@@ -1,11 +1,11 @@
 {
-    "@@last_modified": "2020-06-17T16:40:30+0000",
-    "Travel in Switzerland by train": "Der Schweiz mit dem Zug",
+    "@@last_modified": "2020-06-18T10:19:19+0000",
+    "Travel in Switzerland by train": "Reisen in der Schweiz mit dem Zug",
     "@Travel in Switzerland by train": {
         "type": "text",
         "placeholders": {}
     },
-    "You need to add stations": "Sie müssen Stationen hinzufügen",
+    "You need to add stations": "Bitte fügen Sie Stationen hinzu",
     "@You need to add stations": {
         "type": "text",
         "placeholders": {}
@@ -15,17 +15,17 @@
         "type": "text",
         "placeholders": {}
     },
-    "Start by adding the station from where you will leave.": "Beginnen Sie mit dem Hinzufügen der Station, von der aus Sie losfahren werden.",
+    "Start by adding the station from where you will leave.": "Beginnen Sie mit dem Hinzufügen der Station, von der Sie losfahren möchten.",
     "@Start by adding the station from where you will leave.": {
         "type": "text",
         "placeholders": {}
     },
-    "Add 2 more stations.": "Fügen Sie 2 weitere Stationen hinzu.",
+    "Add 2 more stations.": "Fügen Sie zwei weitere Stationen hinzu.",
     "@Add 2 more stations.": {
         "type": "text",
         "placeholders": {}
     },
-    "Just one one to go!": "Nur noch einer!",
+    "Just one one to go!": "Nur noch eine!",
     "@Just one one to go!": {
         "type": "text",
         "placeholders": {}
@@ -68,12 +68,12 @@
             "build": {}
         }
     },
-    "Could not open your email app.": "Konnte Ihre E-Mail-Anwendung nicht öffnen.",
+    "Could not open your email app.": "Ihre E-Mail-Anwendung konnte nicht geöffnet werden.",
     "@Could not open your email app.": {
         "type": "text",
         "placeholders": {}
     },
-    "Could not open your browser.": "Konnte Ihren Browser nicht öffnen.",
+    "Could not open your browser.": "Ihr Browser konnte nicht geöffnet werden.",
     "@Could not open your browser.": {
         "type": "text",
         "placeholders": {}

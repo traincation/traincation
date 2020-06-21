@@ -19,18 +19,28 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'messages';
 
+  static m0(url) => "Traincation, find the best way to spend your train holidays in Switzerland: ${url}";
+
+  static m1(name, build) => "Version ${name} (${build})";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "Add 2 more stations." : MessageLookupByLibrary.simpleMessage("Add 2 more stations."),
     "Add a station" : MessageLookupByLibrary.simpleMessage("Add a station"),
+    "Could not open your browser." : MessageLookupByLibrary.simpleMessage("Could not open your browser."),
+    "Could not open your email app." : MessageLookupByLibrary.simpleMessage("Could not open your email app."),
     "Find a train station" : MessageLookupByLibrary.simpleMessage("Find a train station"),
     "For the computation to work, you need to add at least three stations." : MessageLookupByLibrary.simpleMessage("For the computation to work, you need to add at least three stations."),
     "Journey" : MessageLookupByLibrary.simpleMessage("Journey"),
     "Just one one to go!" : MessageLookupByLibrary.simpleMessage("Just one one to go!"),
     "Map" : MessageLookupByLibrary.simpleMessage("Map"),
+    "More" : MessageLookupByLibrary.simpleMessage("More"),
     "Not station found" : MessageLookupByLibrary.simpleMessage("Not station found"),
+    "Share it with your friends" : MessageLookupByLibrary.simpleMessage("Share it with your friends"),
     "Start by adding the station from where you will leave." : MessageLookupByLibrary.simpleMessage("Start by adding the station from where you will leave."),
     "Travel in Switzerland by train" : MessageLookupByLibrary.simpleMessage("Travel in Switzerland by train"),
-    "You need to add stations" : MessageLookupByLibrary.simpleMessage("You need to add stations")
+    "You need to add stations" : MessageLookupByLibrary.simpleMessage("You need to add stations"),
+    "aboutShareText" : m0,
+    "aboutVersion" : m1
   };
 }

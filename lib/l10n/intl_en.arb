@@ -1,5 +1,5 @@
 {
-    "@@last_modified": "2020-06-17T16:38:30+0000",
+    "@@last_modified": "2020-06-18T10:19:41+0000",
     "Travel in Switzerland by train": "Travel in Switzerland by train",
     "@Travel in Switzerland by train": {
         "type": "text",
@@ -25,7 +25,7 @@
         "type": "text",
         "placeholders": {}
     },
-    "Just one one to go!": "Just one one to go!",
+    "Just one one to go!": "Just one more to go!",
     "@Just one one to go!": {
         "type": "text",
         "placeholders": {}
