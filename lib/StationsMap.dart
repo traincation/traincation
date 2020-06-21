@@ -65,10 +65,10 @@ class StationsMap extends StatelessWidget {
     }
 
     return GoogleMap(
-      initialCameraPosition: _switzerlandCenter,
-      markers: _markers.values.toSet(),
-      polylines: _polylines.values.toSet(),
-      myLocationEnabled: false,
-    );
+        initialCameraPosition: _switzerlandCenter,
+        markers: _markers.values.toSet(),
+        polylines: _polylines.values.toSet(),
+        myLocationEnabled: false,
+        myLocationButtonEnabled: false);
   }
 }
