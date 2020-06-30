@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'ApiModels.dart';
+import 'api/ApiModels.dart';
 
 class StationsList extends StatelessWidget {
   StationsList(

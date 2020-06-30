@@ -5,13 +5,13 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'AboutPage.dart';
-import 'ApiClient.dart' as apiClient;
-import 'ApiModels.dart';
 import 'MyLocalizations.dart';
 import 'PromptToAdd.dart';
 import 'SearchPage.dart';
 import 'StationsList.dart';
 import 'StationsMap.dart';
+import 'api/ApiClient.dart' as apiClient;
+import 'api/ApiModels.dart';
 
 void main() {
   runApp(MyApp());

@@ -1,9 +1,12 @@
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
+import 'package:json_annotation/json_annotation.dart';
+
+part 'ApiModels.g.dart';
+
 SolverResponse solverResponseFromJson(String str) =>
     SolverResponse.fromJson(json.decode(str));
-
-String solverResponseToJson(SolverResponse data) => json.encode(data.toJson());
 
 class SolverResponse {
   SolverResponse({
@@ -26,11 +29,23 @@ class SolverResponse {
       };
 }
 
+@JsonSerializable()
+class SearchRequest {
+  SearchRequest({
+    @required this.searchTerm,
+  });
+
+  final String searchTerm;
+
+  factory SearchRequest.fromJson(Map<String, dynamic> json) =>
+      _$SearchRequestFromJson(json);
+  Map<String, dynamic> toJson() => _$SearchRequestToJson(this);
+}
+
 SearchResponse searchResponseFromJson(String str) =>
     SearchResponse.fromJson(json.decode(str));
 
-String searchResponseToJson(SearchResponse data) => json.encode(data.toJson());
-
+@JsonSerializable()
 class SearchResponse {
   SearchResponse({
     this.stations,
@@ -38,14 +53,9 @@ class SearchResponse {
 
   final List<Station> stations;
 
-  factory SearchResponse.fromJson(Map<String, dynamic> json) => SearchResponse(
-        stations: List<Station>.from(
-            json["stations"].map((x) => Station.fromJson(x))),
-      );
-
-  Map<String, dynamic> toJson() => {
-        "stations": List<dynamic>.from(stations.map((x) => x.toJson())),
-      };
+  factory SearchResponse.fromJson(Map<String, dynamic> json) =>
+      _$SearchResponseFromJson(json);
+  Map<String, dynamic> toJson() => _$SearchResponseToJson(this);
 }
 
 class Leg {

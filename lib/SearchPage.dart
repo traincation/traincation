@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 
-import 'ApiClient.dart' as apiClient;
-import 'ApiModels.dart';
 import 'MyLocalizations.dart';
+import 'api/ApiClient.dart' as apiClient;
+import 'api/ApiModels.dart';
 
 class SearchPage extends StatelessWidget {
   @override
