@@ -10,7 +10,7 @@ import 'PromptToAdd.dart';
 import 'SearchPage.dart';
 import 'StationsList.dart';
 import 'StationsMap.dart';
-import 'api/ApiClient.dart' as apiClient;
+import 'api/ApiClient.dart';
 import 'api/ApiModels.dart';
 
 void main() {
@@ -64,7 +64,7 @@ class _MainPageState extends State<MainPage> {
     setState(() {
       isLoading = true;
     });
-    var result = await apiClient.solve(stations);
+    var result = await TraincationApi.instance.solve(stations);
     setState(() {
       isLoading = false;
       _solverResult = result;

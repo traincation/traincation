@@ -2,45 +2,41 @@
 //
 //     final solverResponse = solverResponseFromJson(jsonString);
 
-import 'dart:convert';
-import 'dart:io';
-
-import 'package:http/http.dart' as http;
+import 'package:dio/dio.dart';
+import 'package:retrofit/retrofit.dart';
 
 import 'ApiModels.dart';
 
-Future<SolverResponse> solve(List<String> stations) async {
-  const url = 'https://sbbtsp.herokuapp.com/api/solver';
+part 'ApiClient.g.dart';
 
-  var j = {"stationsIds": stations};
-  var encoded = json.encode(j);
-  var response = await http.post(url,
-      headers: {"Content-Type": "application/json"}, body: encoded);
+@RestApi(baseUrl: "https://traincation.herokuapp.com/api/")
+abstract class RestClient {
+  factory RestClient(Dio dio, {String baseUrl}) = _RestClient;
 
-  if (response.statusCode == 200) {
-    return solverResponseFromJson(response.body);
-  } else {
-    throw HttpException(
-        'Unexpected status code ${response.statusCode}:'
-        ' ${response.reasonPhrase}',
-        uri: Uri.parse(url));
-  }
+  @POST("/solver")
+  Future<SolverResponse> solve(@Body() SolverRequest request);
+
+  @POST("/search")
+  Future<SearchResponse> search(@Body() SearchRequest request);
 }
 
-Future<SearchResponse> search(String query) async {
-  const url = 'https://sbbtsp.herokuapp.com/api/search';
+class TraincationApi {
+  TraincationApi._privateConstructor() {
+    final dio = Dio();
+    _client = RestClient(dio);
+  }
 
-  var j = {"searchTerm": query};
-  var encoded = json.encode(j);
-  var response = await http.post(url,
-      headers: {"Content-Type": "application/json"}, body: encoded);
+  static final TraincationApi instance = TraincationApi._privateConstructor();
 
-  if (response.statusCode == 200) {
-    return searchResponseFromJson(response.body);
-  } else {
-    throw HttpException(
-        'Unexpected status code ${response.statusCode}:'
-        ' ${response.reasonPhrase}',
-        uri: Uri.parse(url));
+  RestClient _client;
+
+  Future<SolverResponse> solve(List<String> stations) async {
+    final request = SolverRequest(stationsIds: stations);
+    return _client.solve(request);
+  }
+
+  Future<SearchResponse> search(String query) async {
+    final request = SearchRequest(searchTerm: query);
+    return _client.search(request);
   }
 }

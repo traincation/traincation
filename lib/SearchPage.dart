@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 
 import 'MyLocalizations.dart';
-import 'api/ApiClient.dart' as apiClient;
+import 'api/ApiClient.dart';
 import 'api/ApiModels.dart';
 
 class SearchPage extends StatelessWidget {
@@ -19,7 +19,7 @@ class SearchPage extends StatelessWidget {
 
 class SearchField extends StatelessWidget {
   Future<Iterable<Station>> _search(String query) async {
-    final result = await apiClient.search(query);
+    final result = await TraincationApi.instance.search(query);
     return result.stations;
   }
 
