@@ -57,6 +57,7 @@ class SearchResponse {
   Map<String, dynamic> toJson() => _$SearchResponseToJson(this);
 }
 
+@JsonSerializable()
 class Leg {
   Leg({
     this.from,
@@ -70,21 +71,11 @@ class Leg {
   final int durationMinutes;
   final List<String> stationsList;
 
-  factory Leg.fromJson(Map<String, dynamic> json) => Leg(
-        from: json["from"],
-        to: json["to"],
-        durationMinutes: json["durationMinutes"],
-        stationsList: List<String>.from(json["stationsList"].map((x) => x)),
-      );
-
-  Map<String, dynamic> toJson() => {
-        "from": from,
-        "to": to,
-        "durationMinutes": durationMinutes,
-        "stationsList": List<dynamic>.from(stationsList.map((x) => x)),
-      };
+  factory Leg.fromJson(Map<String, dynamic> json) => _$LegFromJson(json);
+  Map<String, dynamic> toJson() => _$LegToJson(this);
 }
 
+@JsonSerializable()
 class Station {
   Station({
     this.id,
@@ -98,39 +89,12 @@ class Station {
   final String name;
   final double latitude;
   final double longitude;
+  @JsonKey(unknownEnumValue: StopType.TRAIN)
   final StopType type;
 
-  factory Station.fromJson(Map<String, dynamic> json) => Station(
-        id: json["id"],
-        name: json["name"],
-        latitude: json["latitude"].toDouble(),
-        longitude: json["longitude"].toDouble(),
-        type: typeValues.map[json["type"]],
-      );
-
-  Map<String, dynamic> toJson() => {
-        "id": id,
-        "name": name,
-        "latitude": latitude,
-        "longitude": longitude,
-        "type": typeValues.reverse[type],
-      };
+  factory Station.fromJson(Map<String, dynamic> json) =>
+      _$StationFromJson(json);
+  Map<String, dynamic> toJson() => _$StationToJson(this);
 }
 
 enum StopType { TRAIN, BUS }
-
-final typeValues = EnumValues({"bus": StopType.BUS, "train": StopType.TRAIN});
-
-class EnumValues<T> {
-  Map<String, T> map;
-  Map<T, String> reverseMap;
-
-  EnumValues(this.map);
-
-  Map<T, String> get reverse {
-    if (reverseMap == null) {
-      reverseMap = map.map((k, v) => new MapEntry(v, k));
-    }
-    return reverseMap;
-  }
-}
