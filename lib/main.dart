@@ -6,6 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'AboutPage.dart';
 import 'ApiClient.dart' as apiClient;
+import 'ApiModels.dart';
 import 'MyLocalizations.dart';
 import 'PromptToAdd.dart';
 import 'SearchPage.dart';
@@ -51,7 +52,7 @@ class _MainPageState extends State<MainPage> {
   var isLoading = false;
 
   int _selectedTabIndex = 0;
-  apiClient.SolverResponse _solverResult;
+  SolverResponse _solverResult;
 
   Future<void> _init() async {
     await _fetchStations();
