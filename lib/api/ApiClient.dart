@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final solverResponse = solverResponseFromJson(jsonString);
-
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
