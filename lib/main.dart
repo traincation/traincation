@@ -5,12 +5,13 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'AboutPage.dart';
-import 'ApiClient.dart' as apiClient;
 import 'MyLocalizations.dart';
 import 'PromptToAdd.dart';
 import 'SearchPage.dart';
 import 'StationsList.dart';
 import 'StationsMap.dart';
+import 'api/ApiClient.dart';
+import 'api/ApiModels.dart';
 
 void main() {
   runApp(MyApp());
@@ -51,7 +52,7 @@ class _MainPageState extends State<MainPage> {
   var isLoading = false;
 
   int _selectedTabIndex = 0;
-  apiClient.SolverResponse _solverResult;
+  SolverResponse _solverResult;
 
   Future<void> _init() async {
     await _fetchStations();
@@ -63,7 +64,7 @@ class _MainPageState extends State<MainPage> {
     setState(() {
       isLoading = true;
     });
-    var result = await apiClient.solve(stations);
+    var result = await TraincationApi.instance.solve(stations);
     setState(() {
       isLoading = false;
       _solverResult = result;

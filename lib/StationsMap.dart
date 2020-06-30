@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-import 'ApiClient.dart';
+import 'api/ApiModels.dart';
 
 class StationsMap extends StatelessWidget {
   StationsMap({Key key, @required this.solverResult}) : super(key: key);

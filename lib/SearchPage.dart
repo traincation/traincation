@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 
-import 'ApiClient.dart' as apiClient;
 import 'MyLocalizations.dart';
+import 'api/ApiClient.dart';
+import 'api/ApiModels.dart';
 
 class SearchPage extends StatelessWidget {
   @override
@@ -17,16 +18,16 @@ class SearchPage extends StatelessWidget {
 }
 
 class SearchField extends StatelessWidget {
-  Future<Iterable<apiClient.Station>> _search(String query) async {
-    final result = await apiClient.search(query);
+  Future<Iterable<Station>> _search(String query) async {
+    final result = await TraincationApi.instance.search(query);
     return result.stations;
   }
 
-  IconData _iconFromType(apiClient.Type type) {
+  IconData _iconFromType(StopType type) {
     switch (type) {
-      case apiClient.Type.TRAIN:
+      case StopType.TRAIN:
         return Icons.train;
-      case apiClient.Type.BUS:
+      case StopType.BUS:
         return Icons.directions_bus;
     }
 
@@ -43,7 +44,7 @@ class SearchField extends StatelessWidget {
       suggestionsCallback: (pattern) async {
         return _search(pattern);
       },
-      itemBuilder: (context, apiClient.Station station) {
+      itemBuilder: (context, Station station) {
         return ListTile(
           leading: Icon(_iconFromType(station.type)),
           title: Text(station.name),
@@ -54,7 +55,7 @@ class SearchField extends StatelessWidget {
           title: Text(MyLocalizations.of(context).searchNotFound),
         );
       },
-      onSuggestionSelected: (apiClient.Station suggestion) {
+      onSuggestionSelected: (Station suggestion) {
         Navigator.of(context).pop(suggestion.id);
       },
     );
