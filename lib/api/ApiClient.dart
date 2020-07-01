@@ -14,6 +14,9 @@ abstract class RestClient {
 
   @POST("/search")
   Future<SearchResponse> search(@Body() SearchRequest request);
+
+  @POST("/ping")
+  Future<void> ping();
 }
 
 class TraincationApi {
@@ -34,5 +37,9 @@ class TraincationApi {
   Future<SearchResponse> search(String query) async {
     final request = SearchRequest(searchTerm: query);
     return _client.search(request);
+  }
+
+  Future<void> ping() async {
+    return _client.ping();
   }
 }
