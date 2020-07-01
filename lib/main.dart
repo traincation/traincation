@@ -56,6 +56,12 @@ class _MainPageState extends State<MainPage> {
 
   Future<void> _init() async {
     await _fetchStations();
+    if (stations.length < 3) {
+      // Wakeup Heroku. Do not wait for an answer
+      // Only doing this if we don't have enough stations,
+      // because otherwise a solver request is triggered anyway.
+      TraincationApi.instance.ping();
+    }
     await _runSolver();
   }
 

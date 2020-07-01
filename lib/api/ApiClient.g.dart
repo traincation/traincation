@@ -53,4 +53,20 @@ class _RestClient implements RestClient {
     final value = SearchResponse.fromJson(_result.data);
     return value;
   }
+
+  @override
+  ping() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    await _dio.request<void>('/ping',
+        queryParameters: queryParameters,
+        options: RequestOptions(
+            method: 'POST',
+            headers: <String, dynamic>{},
+            extra: _extra,
+            baseUrl: baseUrl),
+        data: _data);
+    return null;
+  }
 }
