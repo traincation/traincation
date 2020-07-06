@@ -5,7 +5,7 @@
 [https://traincation.schmid.pro](https://traincation.schmid.pro)
 
 Download on:
-[Google Play](https://play.google.com/store/apps/details?id=pro.schmid.traincation)
+[Google Play](https://play.google.com/store/apps/details?id=pro.schmid.traincation),
 [Apple App Store](https://apps.apple.com/us/app/traincation/id1518403023?uo=4)
 
 
