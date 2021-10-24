@@ -11,7 +11,7 @@ Download on:
 
 ## Dev
 
-Disclaimer: I did this on my off-time to have fun a learn about Ktor. The code could clearly be better architectured.
+Disclaimer: I did this on my off-time to have fun a learn about Flutter. The code could clearly be better architectured.
 
 To regenerate API models and client:
 
